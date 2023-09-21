@@ -57,14 +57,13 @@
         android:layout_height="wrap_content"/>
 
     <!-- Clear button -->
-
-    <!-- Result Output -->
     <Button
         android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Clear" />
 
+    <!-- Result Output -->
     <TextView
         android:id="@+id/result"
         android:textSize="25sp"

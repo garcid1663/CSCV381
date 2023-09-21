@@ -1,6 +1,7 @@
 package edu.arizona.cast.dillongarcia.bmi
 
 import BmiViewModel
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -30,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         heightEditText = findViewById(R.id.height)
         resultTextView = findViewById(R.id.result)
 
+        val calculateHRButton: Button = findViewById(R.id.calculateHeartRateButton)
+        calculateHRButton.setOnClickListener {
+            // Start the HeartRateActivity
+            val intent = Intent(this, HeartCalculator::class.java)
+            startActivity(intent)
+        }
+
         val calculateButton: Button = findViewById(R.id.btnCalculate)
         calculateButton.setOnClickListener {
             // Update ViewModel properties with user input
@@ -48,6 +56,8 @@ class MainActivity : AppCompatActivity() {
             viewModel.clearData()
             resultTextView.setTextColor(Color.WHITE)
         }
+
+
 
         calculateButton.setOnClickListener {
             val weightStr = weightEditText.text.toString()
